@@ -45,6 +45,7 @@ class Php extends \Magento\Framework\View\TemplateEngine\Php
             include $fileName;
             $this->_currentBlock = $tmpBlock;
         } catch (\Exception $exception) {
+            $this->logger->critical($exception);
             ob_end_clean();
             throw $exception;
         }

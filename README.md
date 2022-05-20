@@ -1,4 +1,4 @@
-# Magento 2 Mini Login
+# Magento 2 Template Debugger.
 * Save phtml error to log file.
 
 
