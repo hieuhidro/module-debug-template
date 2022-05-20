@@ -14,7 +14,7 @@
         "magento/framework": "*"
     },
     "license": [
-        "Open Software License (OSL)"
+        "GPL-3.0"
     ],
     "autoload": {
         "files": [
