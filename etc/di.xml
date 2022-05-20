@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="Hidro\DebugTemplate\Model\Logger\LoggerVirtualType" type="Monolog\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">Template_Engine</argument>
+            <argument name="handlers" xsi:type="array">
+                <item name="standard" xsi:type="object">HidroDebugTemplateLoggerHandler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="HidroDebugTemplateLoggerHandler" type="Magento\Framework\Logger\Handler\Base">
+        <arguments>
+            <argument name="fileName" xsi:type="string">/var/log/template_engine_exception.log</argument>
+        </arguments>
+    </virtualType>
+    <preference for="Magento\Framework\View\TemplateEngine\Php" type="Hidro\DebugTemplate\View\TemplateEngine\Php"/>
+    <type name="Hidro\DebugTemplate\View\TemplateEngine\Php">
+        <arguments>
+            <argument name="logger" xsi:type="object">Hidro\DebugTemplate\Model\Logger\LoggerVirtualType</argument>
+        </arguments>
+    </type>
+</config>

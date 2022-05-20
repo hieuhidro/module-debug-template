@@ -1,0 +1,27 @@
+{
+    "name": "hidro/module-debug-template",
+    "version": "1.0.0",
+    "description": "Adding log for template issue (*.phtml), Because Magento skip the error from *.phtml  on production mode",
+    "type": "magento2-module",
+    "authors": [
+        {
+            "email": "info@solutiontutorials.com",
+            "name": "Hieu Le"
+        }
+    ],
+    "require": {
+        "php": ">=5.6",
+        "magento/framework": "*"
+    },
+    "license": [
+        "Open Software License (OSL)"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Hidro\\DebugTemplate\\": ""
+        }
+    }
+}
